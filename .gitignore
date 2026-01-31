@@ -25,7 +25,7 @@ db.sqlite3
 **/migrations/
 !**/migrations/__init__.py
 
-# Media / Static (falls generiert)
+# Media / Static
 media/
 staticfiles/
 

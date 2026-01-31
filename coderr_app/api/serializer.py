@@ -186,7 +186,7 @@ class OfferDetailItemSerializer(serializers.ModelSerializer):
         read_only_fields = ['id']
 
 
-# --- ORDER SERIALIZER (Placeholder) ---
+# --- ORDER SERIALIZER ---
 
 class OrderSerializer(serializers.ModelSerializer):
     """Serializer for Orders. The input requires `offer_detail_id` and the
