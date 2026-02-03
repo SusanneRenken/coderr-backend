@@ -24,6 +24,6 @@ urlpatterns = [
     path("api/", include("core_app.api.urls")),
     path("api/", include("auth_app.api.urls")),
     path("api/", include("coderr_app.api.urls"))
-]
+] + static('/static/', document_root='staticfiles')
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
