@@ -1,0 +1,10 @@
+.env
+.env.template
+venv
+__pycache__
+*.pyc
+.git
+.gitignore
+db.sqlite3
+media
+staticfiles
