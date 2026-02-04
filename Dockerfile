@@ -9,8 +9,11 @@ RUN apk update \
     && apk add --no-cache gcc musl-dev libffi-dev
 
 COPY requirements.txt .
-RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt
+RUN apk update \
+    && apk add --no-cache gcc musl-dev libffi-dev postgresql-dev \
+    && pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apk del gcc musl-dev
 
 COPY . .
 
