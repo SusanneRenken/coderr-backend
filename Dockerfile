@@ -5,18 +5,22 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+# Build dependencies + Postgres headers
 RUN apk update \
-    && apk add --no-cache gcc musl-dev libffi-dev
+    && apk add --no-cache gcc musl-dev libffi-dev postgresql-dev
 
+# Install Python dependencies
 COPY requirements.txt .
-RUN apk update \
-    && apk add --no-cache gcc musl-dev libffi-dev postgresql-dev \
-    && pip install --upgrade pip \
+RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt \
     && apk del gcc musl-dev
 
+# Copy project files
 COPY . .
+
+# Make entrypoint executable
+RUN chmod +x backend.entrypoint.sh
 
 EXPOSE 8000
 
-CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:8000"]
+ENTRYPOINT ["./backend.entrypoint.sh"]
