@@ -1,10 +1,21 @@
-.env
-.env.template
-venv
-__pycache__
-*.pyc
+# Git
 .git
 .gitignore
+
+# Env
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Local DB / Data
 db.sqlite3
-media
-staticfiles
+postgres_data/
+
+# Static & Media (werden über Volumes gemountet)
+staticfiles/
+media/
+
+# Node / Frontend falls vorhanden
+node_modules/

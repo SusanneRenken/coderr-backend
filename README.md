@@ -64,7 +64,7 @@ The API root is mounted under `/api/`. The Django admin is available at `/admin/
 ## Environment & configuration
 
 - Settings live in `core/settings.py`.
-- By default `DEBUG = True` and the project uses a local SQLite database at `db.sqlite3`.
+- By default `DEBUG = True` and the project uses a local SQLite database at `PostgreSQL`.
 - Media files are stored in the `media/` directory (see `MEDIA_ROOT` and `MEDIA_URL` in settings).
 - The project uses TokenAuthentication from DRF for API authentication.
 - Rate limiting (throttling) is configured in `REST_FRAMEWORK` settings. Default throttle rates and classes are defined there.

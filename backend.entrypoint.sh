@@ -1,13 +1,13 @@
 #!/bin/sh
 set -e
 
-echo "Waiting for database..."
+echo "Waiting for Postgres..."
 
-until python manage.py migrate --check >/dev/null 2>&1; do
+until pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER"; do
   sleep 2
 done
 
-echo "Database ready"
+echo "Postgres is ready"
 
 echo "Running migrations"
 python manage.py migrate

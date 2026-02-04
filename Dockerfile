@@ -7,7 +7,7 @@ WORKDIR /app
 
 # Build dependencies + Postgres headers
 RUN apk update \
-    && apk add --no-cache gcc musl-dev libffi-dev postgresql-dev
+    && apk add --no-cache gcc musl-dev libffi-dev postgresql-dev postgresql-client
 
 # Install Python dependencies
 COPY requirements.txt .

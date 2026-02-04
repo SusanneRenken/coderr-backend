@@ -18,8 +18,6 @@ venv/
 *.log
 *.pot
 *.pyc
-*.sqlite3
-db.sqlite3
 
 # Ignore Django app migrations (keep __init__.py so apps remain packages)
 **/migrations/
