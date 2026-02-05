@@ -58,7 +58,6 @@ class LoginView(ObtainAuthToken):
     throttle_scope = "auth_login"
 
     def post(self, request):
-        # Use the serializer from ObtainAuthToken to validate credentials
         serializer = self.serializer_class(
             data=request.data,
             context={'request': request}
@@ -93,7 +92,6 @@ class ProfileBusinessView(generics.ListAPIView):
     serializer_class = ProfileBusinessSerializer
 
     def get_queryset(self):
-        # Deliberately simple filter; pagination and filtering live elsewhere
         return Profile.objects.filter(type="business")
 
 
