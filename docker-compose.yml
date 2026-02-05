@@ -9,6 +9,7 @@ services:
       - "8002:8000"
     volumes:
       - ./media:/app/media
+      - ./staticfiles:/app/staticfiles
     depends_on:
       - db
     restart: unless-stopped
