@@ -19,9 +19,6 @@ venv/
 *.pot
 *.pyc
 
-# Ignore Django app migrations (keep __init__.py so apps remain packages)
-**/migrations/
-!**/migrations/__init__.py
 
 # Media / Static
 media/
